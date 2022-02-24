@@ -4,6 +4,7 @@ require("dotenv/config");
 const bodyParser = require("body-parser");
 const {DB_CONNECTION} = require('./config/keys');
 const app = express();
+const Post = require("./models/Post");
 const cors = require('cors');
 
 //Middlewares
@@ -17,6 +18,16 @@ app.use("/api/posts", postsRoutes);
 //ROUTES
 app.get("/api/home", (req, res) => {
   res.send("we are home now!");
+});
+
+//test
+app.get("/api/test", async (req, res) => {
+  try {
+    const getPost = await Post.find();
+    res.json(getPost);
+  } catch (err) {
+    res.json({ message: err });
+  }
 });
 
 //connect to DB
