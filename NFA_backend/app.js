@@ -4,6 +4,7 @@ require("dotenv/config");
 const bodyParser = require("body-parser");
 const {DB_CONNECTION} = require('./config/keys');
 const app = express();
+const port = process.env.PORT || 9000;
 const Post = require("./models/Post");
 const cors = require('cors');
 
@@ -44,4 +45,4 @@ if(process.env.NODE_ENV == 'production'){
   })
 }
 
-app.listen(9000);
+app.listen(port);
