@@ -21,16 +21,6 @@ app.get("/api/home", (req, res) => {
   res.send("we are home now!");
 });
 
-//test
-app.get("/api/test", async (req, res) => {
-  try {
-    const getPost = await Post.find();
-    res.json(getPost);
-  } catch (err) {
-    res.json({ message: err });
-  }
-});
-
 //connect to DB
 mongoose.connect(DB_CONNECTION, () =>
   console.log("connected to DB")

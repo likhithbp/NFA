@@ -94,7 +94,7 @@ const ExpenseForm = (props) => {
       <div className="new-expense__control">
         <label>Add Links and socials</label>
         <textarea
-          placeholder="More info....."
+          placeholder="website or twitter links..."
           rows="5"
           cols="50"
           onChange={descriptionChangeHandler}
